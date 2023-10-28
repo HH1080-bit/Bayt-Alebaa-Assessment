@@ -1,0 +1,149 @@
+/* Reset styles */
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    height: 2500px;
+    background-color: #000;
+}
+
+/* Container styles */
+.container {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    border-top: 2px solid black;
+}
+
+/* Scroll container styles */
+.container .scroll-container {
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjusted for better responsiveness */
+    align-items: flex-end;
+    padding-top:150px ;
+
+}
+
+/* Left paragraphs styles */
+.left-paragraphs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem; /* Adjusted for better spacing */
+    transform: translateY(2rem); 
+    color: #69696e;
+    font-weight: bold;
+}
+
+.left-paragraphs div p {
+    padding: 10px;
+    margin: 0;
+}
+
+/* Middle content styles */
+.container .middle-content {
+    position: relative;
+    display: flex; /* Centering content in middle content */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container .middle-content img {
+    max-width: 100%; /* Better responsive image handling */
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Set z-index for the first image */
+.container .middle-content img:first-of-type {
+    z-index: 1;
+}
+
+/* Right paragraph styles */
+.right-paragraph {
+    color: #69696e;
+    margin: 0 30px;
+    font-weight: bold;
+}
+
+.left-paragraphs p span:first-of-type,
+.right-paragraph p span:first-of-type {
+    color: #fff;
+}
+
+.left-paragraphs p span:last-of-type,
+.right-paragraph p span:last-of-type {
+    color: #00f43e;
+}
+
+/* Media query for medium screens */
+@media (min-width: 800px) and (max-width: 1199px) {
+    .container .scroll-container {
+        height: 80vh;
+        width: 100%;
+    }
+
+
+    
+    /* Adjust middle content image scaling */
+    .container .middle-content img {
+        transform: scale(0.7);
+    }
+    
+    /* Right paragraph adjustments */
+    .container .right-paragraph {
+        margin-right: 40px;
+        font-size: smaller;
+    }
+    
+    /* Left paragraphs font size adjustment */
+    .container .left-paragraphs p {
+        font-size: smaller;
+    }
+}
+
+/* Media query for small screens */
+@media (max-width: 799px) {
+    .container .scroll-container {
+        padding: 20px;
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    /* Left paragraphs adjustments */
+    .left-paragraphs {
+        gap: 1rem;
+        transform: translateY(0);
+        font-size: 10px;
+    }
+    
+    /* Middle content adjustments */
+    .container .middle-content {
+        margin: 30px 0;
+        display: block;
+        text-align: center;
+    }
+    
+    .container .middle-content img {
+        max-width: 20%;
+        position: static;
+    }
+    
+    /* Right paragraph adjustments */
+    .right-paragraph {
+        font-size: 10px;
+        margin-left: 10px;
+    }
+}
