@@ -10,7 +10,7 @@ const tl = gsap.timeline({
     trigger: container,
     start: "top top",
     end: "300% top",
-    markers: true,
+    markers: false,
     scrub: true,
   },
 });
